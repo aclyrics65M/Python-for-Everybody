@@ -9,17 +9,22 @@
 # < 0.6 F
 # If the user enters a value out of range, print a suitable error message and exit. For the test, enter a score of 0.85.
 
-hrs = input("Enter Hours:")
-h = float(hrs)
+score = input("Enter Score: ")
 
-rate = input("Enter Rate:")
-r = float(rate)
+con_score = float(score)
 
-pay_rate = 0.0
+letterGrade = None
 
-if h <= 40:
-	pay_rate = h * r
-elif h > 40:
-    pay_rate = 40.0 * r + (h - 40.0) * 1.5 * r       
+if con_score >= 0.9:
+    letterGrade = 'A'
+elif con_score >= 0.8:
+    letterGrade = 'B'
+elif con_score >= 0.7:
+    letterGrade = 'C'
+elif con_score >= 0.6:
+    letterGrade = 'D'
+elif con_score < 0.6:
+    letterGrade = 'F'
 
-print(pay_rate)    
+print(letterGrade)
+       
