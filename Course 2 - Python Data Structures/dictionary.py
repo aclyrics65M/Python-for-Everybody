@@ -13,33 +13,26 @@ if len(name) < 1 :
     
 handle = open(name)
 
-
 # Create a dictionary
 python_di = dict()
 
 # For loop
 for line in handle:
-    line = line.rstrip()
-    
-    # print(line)
-    
-    words = line.split()
-    
-    print(words)
-    
+
+    words = line.split() 
     # Second for-loop
-    for element in words:        
-        python_di[element] = python_di.get(element,0) + 1
+    if line.startswith("From "):        
+        python_di[words[1]] = python_di.get(words[1],0) + 1
         
 # Finding the most common word
-maximumValue = -1
+maximumValue = 0
 wordToFind = None
 
-for key,value in python_di.items():
-    print(key, value)
+for key in python_di:
+    #print(key, value)
     
-    if value > maximumValue:
-        maximumValue = value
+    if python_di[key] > maximumValue:
+        maximumValue = python_di[key]
         wordToFind = key
         
 print(wordToFind,maximumValue) 
