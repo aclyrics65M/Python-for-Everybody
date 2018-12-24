@@ -22,7 +22,9 @@ for line in handle:
     if line.startswith("From "):
         
         timeValue = line.split()[indexPositionTime].split(":")
-        counts[timeValue[0]] = counts.get(timeValue[0], 0) + 1
+        initialTime = timeValue[0]
+        valueObtain = counts.get(timeValue[0], 0)
+        counts[initialTime] = valueObtain + 1
         
 # Create a list object
 listObject = list()
