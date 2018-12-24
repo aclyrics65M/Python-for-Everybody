@@ -12,9 +12,9 @@ if len(name) < 1 :
 handle = open(name)
 
 # Create a dictionary called counts
-
 counts = dict()
 
+# Index Position at 5
 indexPositionTime = 5
 
 # For loop
